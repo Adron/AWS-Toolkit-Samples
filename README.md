@@ -1,0 +1,1 @@
+This repository has several AWS Toolkit Examples, all minus the security information in the Web.config files, you'll have to add your own credentials.  Enjoy.
