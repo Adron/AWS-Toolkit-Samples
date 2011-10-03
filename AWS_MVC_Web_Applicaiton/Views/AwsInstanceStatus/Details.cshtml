@@ -1,0 +1,26 @@
+﻿@model AWS_MVC_Web_Applicaiton.Models.AwsInstanceStatus
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>AwsInstanceStatus</legend>
+
+    <div class="display-label">Message</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Message)
+    </div>
+
+    <div class="display-label">Stamp</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Stamp)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
