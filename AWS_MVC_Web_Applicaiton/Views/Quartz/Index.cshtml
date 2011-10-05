@@ -1,0 +1,33 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>
+    Quartz Scheduling</h2>
+<p>
+    This is a live, working sample, integrated into the website. This page is actively
+    polling every 10 seconds with client side JavaScript to determine new logging messages
+    writting to the logging database tables. The site is running a Quartz Schedule Instance,
+    based on a trigger executing every 5 seconds.</p>
+<form>
+<input type="button" value="Start count!" onclick="doTimer()">
+<input type="text" id="txt" />
+</form>
+<script type="text/javascript">
+    var c = 0;
+    var t;
+    var timer_is_on = 0;
+
+    function timedCount() {
+        document.getElementById('txt').value = c;
+        c = c + 1;
+        t = setTimeout("timedCount()", 1000);
+    }
+
+    function doTimer() {
+        if (!timer_is_on) {
+            timer_is_on = 1;
+            timedCount();
+        }
+    }
+</script>

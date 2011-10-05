@@ -2,5 +2,16 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
-<h2>Index</h2>
+<h2>
+    Standard Components Used in Enterprise Software Development</h2>
+<p>
+    I've added several components to this web application, primarily as a way to show
+    what can easily be included in a .NET MVC 3 Web Application and deploy to AWS. All
+    of this, is simply deployed with a default CloudFormation Setup by right clicking
+    on the project and selecting<img src="../../Content/Images/PublishToAwsCloudFormation.png" /></p>
+<p>
+    Some of the included libraries are...</p>
+<ul>
+    <li>@Html.ActionLink("Entity Framework and Scaffolding", "Index", "AwsInstanceStatus")</li>
+    <li>@Html.ActionLink("Quartz Scheduling", "Index", "Quartz")</li>
+</ul>
