@@ -80,6 +80,22 @@ namespace AWS_MVC_Web_Applicaiton.Models
             }
         }
         private ObjectSet<AwsInstanceStatus> _AwsInstanceStatus1;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<NiceLittleForm> NiceLittleForms
+        {
+            get
+            {
+                if ((_NiceLittleForms == null))
+                {
+                    _NiceLittleForms = base.CreateObjectSet<NiceLittleForm>("NiceLittleForms");
+                }
+                return _NiceLittleForms;
+            }
+        }
+        private ObjectSet<NiceLittleForm> _NiceLittleForms;
 
         #endregion
         #region AddTo Methods
@@ -90,6 +106,14 @@ namespace AWS_MVC_Web_Applicaiton.Models
         public void AddToAwsInstanceStatus1(AwsInstanceStatus awsInstanceStatus)
         {
             base.AddObject("AwsInstanceStatus1", awsInstanceStatus);
+        }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the NiceLittleForms EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddToNiceLittleForms(NiceLittleForm niceLittleForm)
+        {
+            base.AddObject("NiceLittleForms", niceLittleForm);
         }
 
         #endregion
@@ -198,6 +222,235 @@ namespace AWS_MVC_Web_Applicaiton.Models
         private Nullable<global::System.DateTime> _Stamp;
         partial void OnStampChanging(Nullable<global::System.DateTime> value);
         partial void OnStampChanged();
+
+        #endregion
+    
+    }
+    
+    /// <summary>
+    /// No Metadata Documentation available.
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="PilesOfDataModel", Name="NiceLittleForm")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class NiceLittleForm : EntityObject
+    {
+        #region Factory Method
+    
+        /// <summary>
+        /// Create a new NiceLittleForm object.
+        /// </summary>
+        /// <param name="id">Initial value of the Id property.</param>
+        /// <param name="stamp">Initial value of the Stamp property.</param>
+        /// <param name="firstName">Initial value of the FirstName property.</param>
+        /// <param name="email">Initial value of the Email property.</param>
+        public static NiceLittleForm CreateNiceLittleForm(global::System.Guid id, global::System.DateTime stamp, global::System.String firstName, global::System.String email)
+        {
+            NiceLittleForm niceLittleForm = new NiceLittleForm();
+            niceLittleForm.Id = id;
+            niceLittleForm.Stamp = stamp;
+            niceLittleForm.FirstName = firstName;
+            niceLittleForm.Email = email;
+            return niceLittleForm;
+        }
+
+        #endregion
+        #region Primitive Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Guid Id
+        {
+            get
+            {
+                return _Id;
+            }
+            set
+            {
+                if (_Id != value)
+                {
+                    OnIdChanging(value);
+                    ReportPropertyChanging("Id");
+                    _Id = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("Id");
+                    OnIdChanged();
+                }
+            }
+        }
+        private global::System.Guid _Id;
+        partial void OnIdChanging(global::System.Guid value);
+        partial void OnIdChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.DateTime Stamp
+        {
+            get
+            {
+                return _Stamp;
+            }
+            set
+            {
+                OnStampChanging(value);
+                ReportPropertyChanging("Stamp");
+                _Stamp = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("Stamp");
+                OnStampChanged();
+            }
+        }
+        private global::System.DateTime _Stamp;
+        partial void OnStampChanging(global::System.DateTime value);
+        partial void OnStampChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String FirstName
+        {
+            get
+            {
+                return _FirstName;
+            }
+            set
+            {
+                OnFirstNameChanging(value);
+                ReportPropertyChanging("FirstName");
+                _FirstName = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("FirstName");
+                OnFirstNameChanged();
+            }
+        }
+        private global::System.String _FirstName;
+        partial void OnFirstNameChanging(global::System.String value);
+        partial void OnFirstNameChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String LastName
+        {
+            get
+            {
+                return _LastName;
+            }
+            set
+            {
+                OnLastNameChanging(value);
+                ReportPropertyChanging("LastName");
+                _LastName = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("LastName");
+                OnLastNameChanged();
+            }
+        }
+        private global::System.String _LastName;
+        partial void OnLastNameChanging(global::System.String value);
+        partial void OnLastNameChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String Email
+        {
+            get
+            {
+                return _Email;
+            }
+            set
+            {
+                OnEmailChanging(value);
+                ReportPropertyChanging("Email");
+                _Email = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("Email");
+                OnEmailChanged();
+            }
+        }
+        private global::System.String _Email;
+        partial void OnEmailChanging(global::System.String value);
+        partial void OnEmailChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String City
+        {
+            get
+            {
+                return _City;
+            }
+            set
+            {
+                OnCityChanging(value);
+                ReportPropertyChanging("City");
+                _City = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("City");
+                OnCityChanged();
+            }
+        }
+        private global::System.String _City;
+        partial void OnCityChanging(global::System.String value);
+        partial void OnCityChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String Country
+        {
+            get
+            {
+                return _Country;
+            }
+            set
+            {
+                OnCountryChanging(value);
+                ReportPropertyChanging("Country");
+                _Country = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("Country");
+                OnCountryChanged();
+            }
+        }
+        private global::System.String _Country;
+        partial void OnCountryChanging(global::System.String value);
+        partial void OnCountryChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.DateTime> FavoriteDate
+        {
+            get
+            {
+                return _FavoriteDate;
+            }
+            set
+            {
+                OnFavoriteDateChanging(value);
+                ReportPropertyChanging("FavoriteDate");
+                _FavoriteDate = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("FavoriteDate");
+                OnFavoriteDateChanged();
+            }
+        }
+        private Nullable<global::System.DateTime> _FavoriteDate;
+        partial void OnFavoriteDateChanging(Nullable<global::System.DateTime> value);
+        partial void OnFavoriteDateChanged();
 
         #endregion
     

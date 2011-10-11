@@ -4,9 +4,10 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="PilesOfDataModel.Store" Alias="Self" Provider="System.Data.SqlServerCe.4.0" ProviderManifestToken="4.0" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+    <Schema Namespace="PilesOfDataModel.Store" Alias="Self" Provider="System.Data.SqlServerCe.4.0" ProviderManifestToken="4.0" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
         <EntityContainer Name="PilesOfDataModelStoreContainer">
           <EntitySet Name="AwsInstanceStatus" EntityType="PilesOfDataModel.Store.AwsInstanceStatus" store:Type="Tables" />
+          <EntitySet Name="NiceLittleForm" EntityType="PilesOfDataModel.Store.NiceLittleForm" store:Type="Tables" />
         </EntityContainer>
         <EntityType Name="AwsInstanceStatus">
           <Key>
@@ -16,13 +17,26 @@
           <Property Name="Message" Type="ntext" />
           <Property Name="Stamp" Type="datetime" />
         </EntityType>
-      </Schema>
-    </edmx:StorageModels>
+        <EntityType Name="NiceLittleForm">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Stamp" Type="datetime" Nullable="false" />
+          <Property Name="FirstName" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="LastName" Type="nvarchar" MaxLength="100" />
+          <Property Name="Email" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="City" Type="nvarchar" MaxLength="100" />
+          <Property Name="Country" Type="nvarchar" MaxLength="100" />
+          <Property Name="FavoriteDate" Type="datetime" />
+        </EntityType>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="PilesOfDataModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
         <EntityContainer Name="PilesOfDataEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="AwsInstanceStatus1" EntityType="PilesOfDataModel.AwsInstanceStatus" />
+          <EntitySet Name="NiceLittleForms" EntityType="PilesOfDataModel.NiceLittleForm" />
         </EntityContainer>
         <EntityType Name="AwsInstanceStatus">
           <Key>
@@ -31,6 +45,19 @@
           <Property Name="Id" Type="Guid" Nullable="false" />
           <Property Name="Message" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
           <Property Name="Stamp" Type="DateTime" />
+        </EntityType>
+        <EntityType Name="NiceLittleForm">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Guid" Name="Id" Nullable="false" />
+          <Property Type="DateTime" Name="Stamp" Nullable="false" />
+          <Property Type="String" Name="FirstName" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="LastName" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Email" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="City" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Country" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="FavoriteDate" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -43,6 +70,20 @@
             <ScalarProperty Name="Message" ColumnName="Message" />
             <ScalarProperty Name="Stamp" ColumnName="Stamp" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="NiceLittleForms">
+            <EntityTypeMapping TypeName="PilesOfDataModel.NiceLittleForm">
+              <MappingFragment StoreEntitySet="NiceLittleForm">
+                <ScalarProperty Name="FavoriteDate" ColumnName="FavoriteDate" />
+                <ScalarProperty Name="Country" ColumnName="Country" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="Stamp" ColumnName="Stamp" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
@@ -65,6 +106,7 @@
     <Diagrams>
       <Diagram Name="PilesOfData">
         <EntityTypeShape EntityType="PilesOfDataModel.AwsInstanceStatus" Width="2.875" PointX="0.75" PointY="0.75" Height="1.59568359375" IsExpanded="true" />
+        <EntityTypeShape EntityType="PilesOfDataModel.NiceLittleForm" Width="1.5" PointX="4.75" PointY="0.875" Height="2.5571907552083322" />
       </Diagram>
     </Diagrams>
   </Designer>

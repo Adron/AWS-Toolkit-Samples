@@ -1,0 +1,55 @@
+﻿@model AWS_MVC_Web_Applicaiton.Models.NiceLittleForm
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>NiceLittleForm</legend>
+
+    <div class="display-label">Stamp</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Stamp)
+    </div>
+
+    <div class="display-label">First Name</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.FirstName)
+    </div>
+
+    <div class="display-label">Last Name</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.LastName)
+    </div>
+
+    <div class="display-label">E-mail</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Email)
+    </div>
+
+    <div class="display-label">City</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.City)
+    </div>
+
+    <div class="display-label">Country</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Country)
+    </div>
+
+    <div class="display-label">Favorite Date</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.FavoriteDate)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
+
+<script language="javascript" type="text/javascript">
+    tab = "nothing";
+</script>

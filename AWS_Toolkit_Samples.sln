@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWS_MVC_Web_Applicaiton", "AWS_MVC_Web_Applicaiton\AWS_MVC_Web_Applicaiton.csproj", "{EB796AC6-18DD-49C2-BB07-E83B351DF5D5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWS_Web_Sample", "AWS_Web_Sample\AWS_Web_Sample\AWS_Web_Sample.csproj", "{EF3505C7-DFF5-4CBD-861F-FA14E0B5E426}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Web_Application_Unit_Tests", "Web_Application_Unit_Tests\Web_Application_Unit_Tests.csproj", "{34AD8A55-4C10-4E67-A421-E25CCE9A1361}"
 EndProject
 Global
@@ -17,10 +15,6 @@ Global
 		{EB796AC6-18DD-49C2-BB07-E83B351DF5D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EB796AC6-18DD-49C2-BB07-E83B351DF5D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EB796AC6-18DD-49C2-BB07-E83B351DF5D5}.Release|Any CPU.Build.0 = Release|Any CPU
-		{EF3505C7-DFF5-4CBD-861F-FA14E0B5E426}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{EF3505C7-DFF5-4CBD-861F-FA14E0B5E426}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{EF3505C7-DFF5-4CBD-861F-FA14E0B5E426}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{EF3505C7-DFF5-4CBD-861F-FA14E0B5E426}.Release|Any CPU.Build.0 = Release|Any CPU
 		{34AD8A55-4C10-4E67-A421-E25CCE9A1361}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{34AD8A55-4C10-4E67-A421-E25CCE9A1361}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{34AD8A55-4C10-4E67-A421-E25CCE9A1361}.Release|Any CPU.ActiveCfg = Release|Any CPU
