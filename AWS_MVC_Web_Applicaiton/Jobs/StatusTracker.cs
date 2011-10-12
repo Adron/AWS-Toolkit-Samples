@@ -25,7 +25,6 @@ namespace AWS_MVC_Web_Applicaiton.Jobs
 
             db.AwsInstanceStatus1.AddObject(awsInstanceStatus);
             db.SaveChanges();
-            db.SaveChanges();
         }
     }
 }
