@@ -1,0 +1,73 @@
+
+-- --------------------------------------------------
+-- Entity Designer DDL Script for SQL Server Compact Edition
+-- --------------------------------------------------
+-- Date Created: 10/12/2011 16:45:29
+-- Generated from EDMX file: D:\A_Code\AWS-Toolkit-Samples\AWS_MVC_Web_Applicaiton\Models\PilesOfData.edmx
+-- --------------------------------------------------
+
+
+-- --------------------------------------------------
+-- Dropping existing FOREIGN KEY constraints
+-- NOTE: if the constraint does not exist, an ignorable error will be reported.
+-- --------------------------------------------------
+
+
+-- --------------------------------------------------
+-- Dropping existing tables
+-- NOTE: if the table does not exist, an ignorable error will be reported.
+-- --------------------------------------------------
+
+    DROP TABLE [AwsInstanceStatus];
+GO
+    DROP TABLE [NiceLittleForm];
+GO
+
+-- --------------------------------------------------
+-- Creating all tables
+-- --------------------------------------------------
+
+-- Creating table 'AwsInstanceStatus1'
+CREATE TABLE [AwsInstanceStatus1] (
+    [Id] uniqueidentifier  NOT NULL,
+    [Message] ntext  NULL,
+    [Stamp] datetime  NULL
+);
+GO
+
+-- Creating table 'NiceLittleForms'
+CREATE TABLE [NiceLittleForms] (
+    [Id] uniqueidentifier  NOT NULL,
+    [Stamp] datetime  NOT NULL,
+    [FirstName] nvarchar(100)  NOT NULL,
+    [LastName] nvarchar(100)  NULL,
+    [Email] nvarchar(100)  NOT NULL,
+    [City] nvarchar(100)  NULL,
+    [Country] nvarchar(100)  NULL,
+    [FavoriteDate] datetime  NULL
+);
+GO
+
+-- --------------------------------------------------
+-- Creating all PRIMARY KEY constraints
+-- --------------------------------------------------
+
+-- Creating primary key on [Id] in table 'AwsInstanceStatus1'
+ALTER TABLE [AwsInstanceStatus1]
+ADD CONSTRAINT [PK_AwsInstanceStatus1]
+    PRIMARY KEY ([Id] );
+GO
+
+-- Creating primary key on [Id] in table 'NiceLittleForms'
+ALTER TABLE [NiceLittleForms]
+ADD CONSTRAINT [PK_NiceLittleForms]
+    PRIMARY KEY ([Id] );
+GO
+
+-- --------------------------------------------------
+-- Creating all FOREIGN KEY constraints
+-- --------------------------------------------------
+
+-- --------------------------------------------------
+-- Script has ended
+-- --------------------------------------------------
