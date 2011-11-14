@@ -116,7 +116,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>PilesOfData.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Models\SinglyScheduler.cs" />
+    <Compile Include="Jobs\SinglyScheduler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
