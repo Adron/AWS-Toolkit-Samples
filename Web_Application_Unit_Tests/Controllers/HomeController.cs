@@ -5,7 +5,7 @@ using Shouldly;
 namespace Web_Application_Unit_Tests.Controllers
 {
     [TestFixture]
-    public class when_controller_actions_are_executed
+    public class when_home_controller_actions_are_executed
     {
         HomeController controller;
 
