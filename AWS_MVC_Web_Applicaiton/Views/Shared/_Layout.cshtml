@@ -17,17 +17,17 @@
             <div id="header">
                 <div id="logo">
                     <h1>
-                        <a href="#">AWS + VS 2010</a></h1>
+                        @Html.ActionLink("AWS + VS 2010", "Index", "Home")
+                    </h1>
                     <p>
-                        designed, coded, and implemented by <a href="http://www.freecsstemplates.org/">Adron
-                            Hall</a></p>
+                        designed, coded, and implemented by <a href="http://compositecode.com/">Adron Hall</a></p>
                 </div>
                 <div id="menu">
                     <ul>
                         <li id="tabHome">@Html.ActionLink("Home", "Index", "Home")</li>
-                        <li id="tabBlog"><a href="http://compositecode.com/">Blog</a></li>
                         <li id="tabLinks">@Html.ActionLink("Links", "Links", "Home")</li>
                         <li id="tabContact">@Html.ActionLink("Contact", "Contact", "Home")</li>
+                        <li id="tabBlog"><a href="http://compositecode.com/">Blog</a></li>
                     </ul>
                 </div>
             </div>
