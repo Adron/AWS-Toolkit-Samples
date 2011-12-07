@@ -68,18 +68,18 @@ namespace AWS_MVC_Web_Applicaiton.Models
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        public ObjectSet<AwsInstanceStatus> AwsInstanceStatus1
+        public ObjectSet<AwsEc2Status> AwsEc2Status
         {
             get
             {
-                if ((_AwsInstanceStatus1 == null))
+                if ((_AwsEc2Status == null))
                 {
-                    _AwsInstanceStatus1 = base.CreateObjectSet<AwsInstanceStatus>("AwsInstanceStatus1");
+                    _AwsEc2Status = base.CreateObjectSet<AwsEc2Status>("AwsEc2Status");
                 }
-                return _AwsInstanceStatus1;
+                return _AwsEc2Status;
             }
         }
-        private ObjectSet<AwsInstanceStatus> _AwsInstanceStatus1;
+        private ObjectSet<AwsEc2Status> _AwsEc2Status;
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -101,11 +101,11 @@ namespace AWS_MVC_Web_Applicaiton.Models
         #region AddTo Methods
     
         /// <summary>
-        /// Deprecated Method for adding a new object to the AwsInstanceStatus1 EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// Deprecated Method for adding a new object to the AwsEc2Status EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
         /// </summary>
-        public void AddToAwsInstanceStatus1(AwsInstanceStatus awsInstanceStatus)
+        public void AddToAwsEc2Status(AwsEc2Status awsEc2Status)
         {
-            base.AddObject("AwsInstanceStatus1", awsInstanceStatus);
+            base.AddObject("AwsEc2Status", awsEc2Status);
         }
     
         /// <summary>
@@ -127,22 +127,26 @@ namespace AWS_MVC_Web_Applicaiton.Models
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="PilesOfDataModel", Name="AwsInstanceStatus")]
+    [EdmEntityTypeAttribute(NamespaceName="PilesOfDataModel", Name="AwsEc2Status")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
-    public partial class AwsInstanceStatus : EntityObject
+    public partial class AwsEc2Status : EntityObject
     {
         #region Factory Method
     
         /// <summary>
-        /// Create a new AwsInstanceStatus object.
+        /// Create a new AwsEc2Status object.
         /// </summary>
         /// <param name="id">Initial value of the Id property.</param>
-        public static AwsInstanceStatus CreateAwsInstanceStatus(global::System.Guid id)
+        /// <param name="message">Initial value of the Message property.</param>
+        /// <param name="stamp">Initial value of the Stamp property.</param>
+        public static AwsEc2Status CreateAwsEc2Status(global::System.Guid id, global::System.String message, global::System.DateTime stamp)
         {
-            AwsInstanceStatus awsInstanceStatus = new AwsInstanceStatus();
-            awsInstanceStatus.Id = id;
-            return awsInstanceStatus;
+            AwsEc2Status awsEc2Status = new AwsEc2Status();
+            awsEc2Status.Id = id;
+            awsEc2Status.Message = message;
+            awsEc2Status.Stamp = stamp;
+            return awsEc2Status;
         }
 
         #endregion
@@ -178,7 +182,7 @@ namespace AWS_MVC_Web_Applicaiton.Models
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
         public global::System.String Message
         {
@@ -190,7 +194,7 @@ namespace AWS_MVC_Web_Applicaiton.Models
             {
                 OnMessageChanging(value);
                 ReportPropertyChanging("Message");
-                _Message = StructuralObject.SetValidValue(value, true);
+                _Message = StructuralObject.SetValidValue(value, false);
                 ReportPropertyChanged("Message");
                 OnMessageChanged();
             }
@@ -202,9 +206,9 @@ namespace AWS_MVC_Web_Applicaiton.Models
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
-        public Nullable<global::System.DateTime> Stamp
+        public global::System.DateTime Stamp
         {
             get
             {
@@ -219,8 +223,8 @@ namespace AWS_MVC_Web_Applicaiton.Models
                 OnStampChanged();
             }
         }
-        private Nullable<global::System.DateTime> _Stamp;
-        partial void OnStampChanging(Nullable<global::System.DateTime> value);
+        private global::System.DateTime _Stamp;
+        partial void OnStampChanging(global::System.DateTime value);
         partial void OnStampChanged();
 
         #endregion

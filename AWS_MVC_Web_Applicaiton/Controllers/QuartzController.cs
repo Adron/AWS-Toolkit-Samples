@@ -10,7 +10,7 @@ namespace AWS_MVC_Web_Applicaiton.Controllers
 
         public ActionResult Index()
         {
-            return View(db.AwsInstanceStatus1.ToList());
+            return View(db.AwsEc2Status.ToList());
         }
     }
 }
