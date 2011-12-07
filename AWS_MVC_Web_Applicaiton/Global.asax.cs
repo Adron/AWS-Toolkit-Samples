@@ -1,9 +1,6 @@
-﻿using System;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 using System.Web.Routing;
 using AWS_MVC_Web_Applicaiton.Jobs;
-using AWS_MVC_Web_Applicaiton.Models;
-using Quartz;
 
 namespace AWS_MVC_Web_Applicaiton
 {

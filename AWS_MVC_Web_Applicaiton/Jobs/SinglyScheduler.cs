@@ -6,21 +6,22 @@ namespace AWS_MVC_Web_Applicaiton.Jobs
 {
     public class SinglyScheduler
     {
+        private static readonly ISchedulerFactory SchedulerFactory;
+        private static readonly IScheduler Scheduler;
+
         static SinglyScheduler()
         {
             SchedulerFactory = new StdSchedulerFactory();
             Scheduler = SchedulerFactory.GetScheduler();
         }
+        
         public static IScheduler GetScheduler()
         {
             if (Scheduler.IsStarted == false)
                 Scheduler.Start();
             return Scheduler;
         }
-
-        private static readonly ISchedulerFactory SchedulerFactory;
-        private static readonly IScheduler Scheduler;
-
+      
         public static void FireOffSchedules()
         {
             var sched = GetScheduler();
