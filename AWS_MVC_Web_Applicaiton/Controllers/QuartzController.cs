@@ -1,16 +1,19 @@
-﻿using System.Linq;
-using System.Web.Mvc;
-using AWS_MVC_Web_Applicaiton.Models;
+﻿using System.Web.Mvc;
+using AWS_MVC_Web_Applicaiton.Data;
+using AWS_MVC_Web_Applicaiton.Data.Repositories;
 
 namespace AWS_MVC_Web_Applicaiton.Controllers
 {
     public class QuartzController : Controller
     {
-        private PilesOfDataEntities db = new PilesOfDataEntities();
-
-        public ActionResult Index()
+        public ViewResult Index()
         {
-            return View(db.AwsEc2Status.ToList());
+            using (new RepositorySession())
+            {
+                var repo = new AwsEc2StatusRepository();
+                var result = repo.GetAll();
+                return View(result);
+            }
         }
     }
 }
