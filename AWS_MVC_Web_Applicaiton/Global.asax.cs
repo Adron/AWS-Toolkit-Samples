@@ -1,6 +1,8 @@
 ﻿using System.Web.Mvc;
 using System.Web.Routing;
+using AWS_MVC_Web_Applicaiton.Data;
 using AWS_MVC_Web_Applicaiton.Jobs;
+using AWS_MVC_Web_Applicaiton.Models;
 
 namespace AWS_MVC_Web_Applicaiton
 {
@@ -29,6 +31,8 @@ namespace AWS_MVC_Web_Applicaiton
 
             RegisterGlobalFilters(GlobalFilters.Filters);
             RegisterRoutes(RouteTable.Routes);
+
+            RepositorySession.DefaultContainerType = typeof(PilesOfDataEntities);
 
             SinglyScheduler.FireOffSchedules();
         }
