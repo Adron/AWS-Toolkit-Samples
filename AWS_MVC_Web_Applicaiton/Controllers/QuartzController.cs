@@ -1,7 +1,7 @@
 ﻿using System.Web.Mvc;
-using AWS_MVC_Web_Applicaiton.Data;
-using AWS_MVC_Web_Applicaiton.Data.Repositories;
-using AWS_MVC_Web_Applicaiton.Models;
+using AWS_MVC_Web_Application.Data;
+using AWS_MVC_Web_Application.Data.Repositories;
+using AWS_MVC_Web_Application.Models;
 
 namespace AWS_MVC_Web_Applicaiton.Controllers
 {

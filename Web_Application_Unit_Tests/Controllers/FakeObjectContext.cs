@@ -1,5 +1,6 @@
 ﻿using System.Data.Objects;
-using AWS_MVC_Web_Applicaiton.Data;
+
+using AWS_MVC_Web_Application.Data;
 
 namespace Web_Application_Unit_Tests.Controllers
 {

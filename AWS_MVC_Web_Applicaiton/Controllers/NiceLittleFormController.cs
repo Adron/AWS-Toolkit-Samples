@@ -2,7 +2,7 @@
 using System.Data;
 using System.Linq;
 using System.Web.Mvc;
-using AWS_MVC_Web_Applicaiton.Models;
+using AWS_MVC_Web_Application.Models;
 
 namespace AWS_MVC_Web_Applicaiton.Controllers
 { 

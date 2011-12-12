@@ -1,10 +1,10 @@
 ﻿using System.Web.Mvc;
 using System.Web.Routing;
-using AWS_MVC_Web_Applicaiton.Data;
 using AWS_MVC_Web_Applicaiton.Jobs;
-using AWS_MVC_Web_Applicaiton.Models;
+using AWS_MVC_Web_Application.Data;
+using AWS_MVC_Web_Application.Models;
 
-namespace AWS_MVC_Web_Applicaiton
+namespace AWS_MVC_Web_Application
 {
     public class MvcApplication : System.Web.HttpApplication
     {

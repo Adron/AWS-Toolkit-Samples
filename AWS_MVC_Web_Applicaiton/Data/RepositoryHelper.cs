@@ -1,7 +1,7 @@
 ﻿using System.Data.Objects;
 using System.Linq;
 
-namespace AWS_MVC_Web_Applicaiton.Data
+namespace AWS_MVC_Web_Application.Data
 {
     public static class RepositoryHelper
     {

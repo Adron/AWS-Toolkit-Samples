@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace AWS_MVC_Web_Applicaiton.Data
+namespace AWS_MVC_Web_Application.Data
 {
     public class RepositorySession : IRepositorySession
     {

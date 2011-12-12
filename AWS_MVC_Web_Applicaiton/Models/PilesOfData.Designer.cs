@@ -17,7 +17,7 @@ using System.Runtime.Serialization;
 
 [assembly: EdmSchemaAttribute()]
 
-namespace AWS_MVC_Web_Applicaiton.Models
+namespace AWS_MVC_Web_Application.Models
 {
     #region Contexts
     

@@ -1,5 +1,5 @@
 ﻿using System;
-using AWS_MVC_Web_Applicaiton.Models;
+using AWS_MVC_Web_Application.Models;
 using Quartz;
 
 namespace AWS_MVC_Web_Applicaiton.Jobs
