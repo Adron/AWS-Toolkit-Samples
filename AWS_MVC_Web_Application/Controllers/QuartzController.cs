@@ -11,7 +11,7 @@ namespace AWS_MVC_Web_Application.Controllers
 
         public QuartzController()
         {
-            repository = new AwsEc2StatusRepository(new RepositorySession(new PilesOfDataEntities()));
+            repository = new AwsEc2StatusRepository(new RepositorySession(new NotBigDataEntities()));
         }
 
         public QuartzController(IRepository<AwsEc2Status> repository)

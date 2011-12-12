@@ -24,32 +24,32 @@ namespace AWS_MVC_Web_Application.Models
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
-    public partial class PilesOfDataEntities : ObjectContext
+    public partial class NotBigDataEntities : ObjectContext
     {
         #region Constructors
     
         /// <summary>
-        /// Initializes a new PilesOfDataEntities object using the connection string found in the 'PilesOfDataEntities' section of the application configuration file.
+        /// Initializes a new NotBigDataEntities object using the connection string found in the 'NotBigDataEntities' section of the application configuration file.
         /// </summary>
-        public PilesOfDataEntities() : base("name=PilesOfDataEntities", "PilesOfDataEntities")
+        public NotBigDataEntities() : base("name=NotBigDataEntities", "NotBigDataEntities")
         {
             this.ContextOptions.LazyLoadingEnabled = true;
             OnContextCreated();
         }
     
         /// <summary>
-        /// Initialize a new PilesOfDataEntities object.
+        /// Initialize a new NotBigDataEntities object.
         /// </summary>
-        public PilesOfDataEntities(string connectionString) : base(connectionString, "PilesOfDataEntities")
+        public NotBigDataEntities(string connectionString) : base(connectionString, "NotBigDataEntities")
         {
             this.ContextOptions.LazyLoadingEnabled = true;
             OnContextCreated();
         }
     
         /// <summary>
-        /// Initialize a new PilesOfDataEntities object.
+        /// Initialize a new NotBigDataEntities object.
         /// </summary>
-        public PilesOfDataEntities(EntityConnection connection) : base(connection, "PilesOfDataEntities")
+        public NotBigDataEntities(EntityConnection connection) : base(connection, "NotBigDataEntities")
         {
             this.ContextOptions.LazyLoadingEnabled = true;
             OnContextCreated();
@@ -127,7 +127,7 @@ namespace AWS_MVC_Web_Application.Models
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="PilesOfDataModel", Name="AwsEc2Status")]
+    [EdmEntityTypeAttribute(NamespaceName="NotBigDataModel", Name="AwsEc2Status")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
     public partial class AwsEc2Status : EntityObject
@@ -234,7 +234,7 @@ namespace AWS_MVC_Web_Application.Models
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="PilesOfDataModel", Name="NiceLittleForm")]
+    [EdmEntityTypeAttribute(NamespaceName="NotBigDataModel", Name="NiceLittleForm")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
     public partial class NiceLittleForm : EntityObject

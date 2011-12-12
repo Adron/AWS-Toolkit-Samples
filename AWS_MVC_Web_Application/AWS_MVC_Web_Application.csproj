@@ -119,12 +119,12 @@
     </Compile>
     <Compile Include="Jobs\StatusTracker.cs" />
     <Compile Include="Jobs\WorkingFlowJob.cs" />
-    <Compile Include="Models\PilesOfData.Designer.cs">
+    <Compile Include="Jobs\SinglyScheduler.cs" />
+    <Compile Include="Models\NotBigData.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>PilesOfData.edmx</DependentUpon>
+      <DependentUpon>NotBigData.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Jobs\SinglyScheduler.cs" />
     <Compile Include="Models\PilesOfDataEntities.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -282,6 +282,10 @@
     <None Include="Content\DataTables-1.8.2\extras\TableTools\media\images\psd\file_types.psd" />
     <None Include="Content\DataTables-1.8.2\extras\TableTools\media\images\psd\printer.psd" />
     <None Include="Content\DataTables-1.8.2\media\images\Sorting icons.psd" />
+    <EntityDeploy Include="Models\NotBigData.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>NotBigData.Designer.cs</LastGenOutput>
+    </EntityDeploy>
     <None Include="Scripts\DataTables-1.8.2\extras\AutoFill\media\js\AutoFill.min.js.gz" />
     <None Include="Scripts\DataTables-1.8.2\extras\ColReorder\ColReorder\media\js\ColReorder.min.js.gz" />
     <None Include="Scripts\DataTables-1.8.2\extras\ColReorder\media\js\ColReorder.min.js.gz" />
@@ -315,12 +319,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <EntityDeploy Include="Models\PilesOfData.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>PilesOfData.Designer.cs</LastGenOutput>
-    </EntityDeploy>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Home\Index.cshtml" />

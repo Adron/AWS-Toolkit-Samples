@@ -44,7 +44,7 @@ namespace Web_Application_Unit_Tests.Controllers
         }
 
         [Test]
-        public void should_return_view_with_model_results()
+        public void should_return_view_with_aws_ec2_status_model_entries()
         {
             var result = controller.Index().Model;
             var list = (IEnumerable<AwsEc2Status>)result;

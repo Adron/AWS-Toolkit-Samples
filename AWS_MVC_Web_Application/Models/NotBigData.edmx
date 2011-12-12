@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="NotBigDataModel.Store" Alias="Self" Provider="System.Data.SqlServerCe.4.0" ProviderManifestToken="4.0" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="NotBigDataModelStoreContainer">
+          <EntitySet Name="AwsInstanceStatus" EntityType="NotBigDataModel.Store.AwsInstanceStatus" store:Type="Tables" />
+          <EntitySet Name="NiceLittleForms" EntityType="NotBigDataModel.Store.NiceLittleForms" store:Type="Tables" />
+        </EntityContainer>
+        <EntityType Name="AwsInstanceStatus">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Message" Type="nvarchar" Nullable="false" MaxLength="500" />
+          <Property Name="Stamp" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="NiceLittleForms">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Stamp" Type="datetime" Nullable="false" />
+          <Property Name="FirstName" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="LastName" Type="nvarchar" MaxLength="100" />
+          <Property Name="Email" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="City" Type="nvarchar" MaxLength="100" />
+          <Property Name="Country" Type="nvarchar" MaxLength="100" />
+          <Property Name="FavoriteDate" Type="datetime" />
+        </EntityType>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="NotBigDataModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="NotBigDataEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="AwsEc2Status" EntityType="NotBigDataModel.AwsEc2Status" />
+          <EntitySet Name="NiceLittleForms" EntityType="NotBigDataModel.NiceLittleForm" />
+        </EntityContainer>
+        <EntityType Name="AwsEc2Status">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" />
+          <Property Name="Message" Type="String" Nullable="false" MaxLength="500" Unicode="true" FixedLength="false" />
+          <Property Name="Stamp" Type="DateTime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="NiceLittleForm">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" />
+          <Property Name="Stamp" Type="DateTime" Nullable="false" />
+          <Property Name="FirstName" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="LastName" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="Email" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="City" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="Country" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="FavoriteDate" Type="DateTime" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="NotBigDataModelStoreContainer" CdmEntityContainer="NotBigDataEntities">
+          <EntitySetMapping Name="AwsEc2Status"><EntityTypeMapping TypeName="NotBigDataModel.AwsEc2Status"><MappingFragment StoreEntitySet="AwsInstanceStatus">
+            <ScalarProperty Name="Id" ColumnName="Id" />
+            <ScalarProperty Name="Message" ColumnName="Message" />
+            <ScalarProperty Name="Stamp" ColumnName="Stamp" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="NiceLittleForms"><EntityTypeMapping TypeName="NotBigDataModel.NiceLittleForm"><MappingFragment StoreEntitySet="NiceLittleForms">
+            <ScalarProperty Name="Id" ColumnName="Id" />
+            <ScalarProperty Name="Stamp" ColumnName="Stamp" />
+            <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+            <ScalarProperty Name="LastName" ColumnName="LastName" />
+            <ScalarProperty Name="Email" ColumnName="Email" />
+            <ScalarProperty Name="City" ColumnName="City" />
+            <ScalarProperty Name="Country" ColumnName="Country" />
+            <ScalarProperty Name="FavoriteDate" ColumnName="FavoriteDate" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="NotBigData">
+        <EntityTypeShape EntityType="NotBigDataModel.AwsEc2Status" Width="1.5" PointX="0.75" PointY="0.75" Height="1.59568359375" IsExpanded="true" />
+        <EntityTypeShape EntityType="NotBigDataModel.NiceLittleForm" Width="1.5" PointX="2.75" PointY="0.75" Height="2.5571907552083326" IsExpanded="true" />
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -31,8 +31,9 @@ namespace AWS_MVC_Web_Application
 
             RegisterGlobalFilters(GlobalFilters.Filters);
             RegisterRoutes(RouteTable.Routes);
+            ControllerBuilder.Current.DefaultNamespaces.Add("AWS_MVC_Web_Application.Controllers");
 
-            RepositorySession.DefaultContainerType = typeof(PilesOfDataEntities);
+            RepositorySession.DefaultContainerType = typeof(NotBigDataEntities);
 
             SinglyScheduler.FireOffSchedules();
         }

@@ -6,11 +6,11 @@ namespace AWS_MVC_Web_Application.Jobs
 {
     public class StatusTrackerJob : IJob
     {
-        readonly PilesOfDataEntities db;
+        readonly NotBigDataEntities db;
 
         public StatusTrackerJob()
         {
-            db = new PilesOfDataEntities();
+            db = new NotBigDataEntities();
         }
 
         public void Execute(JobExecutionContext context)
