@@ -1,6 +1,6 @@
 ﻿using System.Web.Mvc;
 
-namespace AWS_MVC_Web_Applicaiton.Controllers
+namespace AWS_MVC_Web_Application.Controllers
 {
     public class HomeController : Controller
     {

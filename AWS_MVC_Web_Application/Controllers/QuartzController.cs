@@ -3,7 +3,7 @@ using AWS_MVC_Web_Application.Data;
 using AWS_MVC_Web_Application.Data.Repositories;
 using AWS_MVC_Web_Application.Models;
 
-namespace AWS_MVC_Web_Applicaiton.Controllers
+namespace AWS_MVC_Web_Application.Controllers
 {
     public class QuartzController : Controller
     {

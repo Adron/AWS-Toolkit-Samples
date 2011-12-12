@@ -1,4 +1,4 @@
-﻿using AWS_MVC_Web_Applicaiton.Controllers;
+﻿using AWS_MVC_Web_Application.Controllers;
 using NUnit.Framework;
 using Shouldly;
 

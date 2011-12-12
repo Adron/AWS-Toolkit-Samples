@@ -71,6 +71,12 @@
   <ItemGroup>
     <Folder Include="Jobs\" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AWS_MVC_Web_Application\AWS_MVC_Web_Application.csproj">
+      <Project>{EB796AC6-18DD-49C2-BB07-E83B351DF5D5}</Project>
+      <Name>AWS_MVC_Web_Application</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

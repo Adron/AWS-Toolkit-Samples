@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using AWS_MVC_Web_Applicaiton.Controllers;
+using AWS_MVC_Web_Application.Controllers;
 using AWS_MVC_Web_Application.Data;
 using AWS_MVC_Web_Application.Models;
 using FizzWare.NBuilder;
