@@ -11,23 +11,23 @@ using Shouldly;
 namespace Web_Application_Unit_Tests.Controllers
 {
     [TestFixture]
-    public class when_quartz_controller_actions_are_executed
+    public class when_nice_little_form_controller_actions_are_executed
     {
-        QuartzController controller;
+        NiceLittleFormController controller;
         private const int totalRows = 10;
-        IList<AwsEc2Status> resultsRows;
-        IRepository<AwsEc2Status> repository;
+        IList<NiceLittleForm> resultsRows;
+        IRepository<NiceLittleForm> repository;
 
         [TestFixtureSetUp]
         public void SetupController()
         {
-            resultsRows = Builder<AwsEc2Status>.CreateListOfSize(totalRows).Build();
-            repository = Substitute.For<IRepository<AwsEc2Status>>();
+            resultsRows = Builder<NiceLittleForm>.CreateListOfSize(totalRows).Build();
+            repository = Substitute.For<IRepository<NiceLittleForm>>();
             repository.All().Returns(resultsRows.AsQueryable());
 
             RepositorySession.DefaultContainerType = typeof(FakeObjectContext);
 
-            controller = new QuartzController(repository);
+            controller = new NiceLittleFormController(repository);
         }
 
         [Test]
@@ -41,14 +41,6 @@ namespace Web_Application_Unit_Tests.Controllers
         public void should_return_appropriate_index_view()
         {
             controller.ShouldNotBe(null);
-        }
-
-        [Test]
-        public void should_return_view_with_aws_ec2_status_model_entries()
-        {
-            var result = controller.Index().Model;
-            var list = (IEnumerable<AwsEc2Status>)result;
-            list.ToList().Count.ShouldBe(10);
         }
     }
 }

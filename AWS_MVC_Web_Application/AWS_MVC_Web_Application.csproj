@@ -111,6 +111,7 @@
     <Compile Include="Data\IRepository.cs" />
     <Compile Include="Data\IRepositorySession.cs" />
     <Compile Include="Data\Repositories\AwsEc2StatusRepository.cs" />
+    <Compile Include="Data\Repositories\NiceLittleFormRepository.cs" />
     <Compile Include="Data\Repository.cs" />
     <Compile Include="Data\RepositoryHelper.cs" />
     <Compile Include="Data\RepositorySession.cs" />

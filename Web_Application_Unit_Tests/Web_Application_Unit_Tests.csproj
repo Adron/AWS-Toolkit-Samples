@@ -62,6 +62,7 @@
   <ItemGroup>
     <Compile Include="Controllers\FakeObjectContext.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\NiceLittleFormController.cs" />
     <Compile Include="Controllers\QuartzController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
