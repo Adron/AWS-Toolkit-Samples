@@ -18,7 +18,7 @@ using Amazon.S3.Model;
 
 namespace AWS_Web_Project_Template
 {
-    public partial class _Default : System.Web.UI.Page
+    public partial class _Default : Page
     {
         protected AmazonEC2 ec2;
         protected AmazonS3 s3;
