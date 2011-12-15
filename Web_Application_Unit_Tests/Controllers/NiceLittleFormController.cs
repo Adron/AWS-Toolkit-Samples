@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using AWS_MVC_Web_Application.Controllers;
 using AWS_MVC_Web_Application.Data;
@@ -17,11 +18,28 @@ namespace Web_Application_Unit_Tests.Controllers
         private const int totalRows = 10;
         IList<NiceLittleForm> resultsRows;
         IRepository<NiceLittleForm> repository;
+        private NiceLittleForm addDeleteNewLittleForm;
+        private Guid guid = Guid.NewGuid();
 
         [TestFixtureSetUp]
         public void SetupController()
         {
-            resultsRows = Builder<NiceLittleForm>.CreateListOfSize(totalRows).Build();
+            addDeleteNewLittleForm = new NiceLittleForm()
+            {
+                Id = guid,
+                City = "Someplace",
+                Country = "USA",
+                Email = "blagh@gmail.com",
+                FavoriteDate = DateTime.Now.AddDays(-4),
+                FirstName = "John",
+                LastName = "Smith",
+                Stamp = DateTime.Now
+            };
+
+            
+            resultsRows = Builder<NiceLittleForm>.CreateListOfSize(totalRows - 1).Build();
+            resultsRows.Add(addDeleteNewLittleForm);
+
             repository = Substitute.For<IRepository<NiceLittleForm>>();
             repository.All().Returns(resultsRows.AsQueryable());
 
@@ -41,6 +59,40 @@ namespace Web_Application_Unit_Tests.Controllers
         public void should_return_appropriate_index_view()
         {
             controller.ShouldNotBe(null);
+        }
+
+        [Test]
+        public void should_return_view_with_NiceLittleForm_model_entries()
+        {
+            var result = controller.Index().Model;
+            var list = (IEnumerable<NiceLittleForm>)result;
+            list.ToList().Count.ShouldBe(totalRows);
+        }
+
+        [Test]
+        public void should_show_empty_create_view_result()
+        {
+            controller.Create().ShouldNotBe(null);
+        }
+
+        [Test]
+        public void should_add_the_NiceLittleForm_to_the_repository()
+        {
+            controller.Create(addDeleteNewLittleForm);
+            repository.Received().Add(addDeleteNewLittleForm);
+        }
+
+        [Test]
+        public void should_show_NiceLittleForm_delete_confirmation_page()
+        {
+            controller.Delete(guid).ShouldNotBe(null);
+        }
+
+        [Test]
+        public void should_remove_the_NiceLittleForm_with_the_repository()
+        {
+            controller.DeleteConfirmed(guid);
+            repository.Received().Delete(addDeleteNewLittleForm);
         }
     }
 }

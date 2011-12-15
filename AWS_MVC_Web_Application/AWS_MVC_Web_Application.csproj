@@ -107,14 +107,14 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\NiceLittleFormController.cs" />
     <Compile Include="Controllers\QuartzController.cs" />
-    <Compile Include="Data\IObjectContext.cs" />
-    <Compile Include="Data\IRepository.cs" />
-    <Compile Include="Data\IRepositorySession.cs" />
-    <Compile Include="Data\Repositories\AwsEc2StatusRepository.cs" />
-    <Compile Include="Data\Repositories\NiceLittleFormRepository.cs" />
-    <Compile Include="Data\Repository.cs" />
-    <Compile Include="Data\RepositoryHelper.cs" />
-    <Compile Include="Data\RepositorySession.cs" />
+    <Compile Include="Controllers\Data\IObjectContext.cs" />
+    <Compile Include="Controllers\Data\IRepository.cs" />
+    <Compile Include="Controllers\Data\IRepositorySession.cs" />
+    <Compile Include="Controllers\Data\Repositories\AwsEc2StatusRepository.cs" />
+    <Compile Include="Controllers\Data\Repositories\NiceLittleFormRepository.cs" />
+    <Compile Include="Controllers\Data\Repository.cs" />
+    <Compile Include="Controllers\Data\RepositoryHelper.cs" />
+    <Compile Include="Controllers\Data\RepositorySession.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>

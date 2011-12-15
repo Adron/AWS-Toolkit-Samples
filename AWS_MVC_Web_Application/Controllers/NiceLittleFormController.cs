@@ -7,7 +7,7 @@ using AWS_MVC_Web_Application.Data.Repositories;
 using AWS_MVC_Web_Application.Models;
 
 namespace AWS_MVC_Web_Application.Controllers
-{ 
+{
     public class NiceLittleFormController : Controller
     {
         private readonly IRepository<NiceLittleForm> repository;
@@ -22,8 +22,6 @@ namespace AWS_MVC_Web_Application.Controllers
             this.repository = repository;
         }
 
-       // private NotBigDataEntities db = new NotBigDataEntities();
-
         public ViewResult Index()
         {
             return View(repository.All().ToList());
@@ -35,26 +33,28 @@ namespace AWS_MVC_Web_Application.Controllers
         //    return View(nicelittleform);
         //}
 
-        //public ActionResult Create()
-        //{
-        //    return View();
-        //} 
+        public ActionResult Create()
+        {
+            return View();
+        }
 
-        //[HttpPost]
-        //public ActionResult Create(NiceLittleForm nicelittleform)
-        //{
-        //    if (ModelState.IsValid)
-        //    {
-        //        nicelittleform.Id = Guid.NewGuid();
-        //        nicelittleform.Stamp = DateTime.Now;
-        //        db.NiceLittleForms.AddObject(nicelittleform);
-        //        db.SaveChanges();
-        //        return RedirectToAction("Index");  
-        //    }
+        [HttpPost]
+        public ActionResult Create(NiceLittleForm nicelittleform)
+        {
+            using (var db = new RepositorySession())
+            {
+                if (ModelState.IsValid)
+                {
+                    nicelittleform.Id = Guid.NewGuid();
+                    nicelittleform.Stamp = DateTime.Now;
+                    repository.Add(nicelittleform);
+                    db.Commit();
+                }
+            }
 
-        //    return View(nicelittleform);
-        //}
-        
+            return View(nicelittleform);
+        }
+
         //public ActionResult Edit(Guid id)
         //{
         //    NiceLittleForm nicelittleform = db.NiceLittleForms.Single(n => n.Id == id);
@@ -75,25 +75,25 @@ namespace AWS_MVC_Web_Application.Controllers
         //    return View(nicelittleform);
         //}
 
-        //public ActionResult Delete(Guid id)
-        //{
-        //    NiceLittleForm nicelittleform = db.NiceLittleForms.Single(n => n.Id == id);
-        //    return View(nicelittleform);
-        //}
+        public ActionResult Delete(Guid id)
+        {
+            var niceLittleForm = repository.All().Single(n => n.Id == id);
+            return View(niceLittleForm);
+        }
 
-        //[HttpPost, ActionName("Delete")]
-        //public ActionResult DeleteConfirmed(Guid id)
-        //{            
-        //    NiceLittleForm nicelittleform = db.NiceLittleForms.Single(n => n.Id == id);
-        //    db.NiceLittleForms.DeleteObject(nicelittleform);
-        //    db.SaveChanges();
-        //    return RedirectToAction("Index");
-        //}
+        [HttpPost, ActionName("Delete")]
+        public ActionResult DeleteConfirmed(Guid id)
+        {
+            var repoResult = repository.All();
+            var nicelittleform = repoResult.Single(n => n.Id == id);
 
-        //protected override void Dispose(bool disposing)
-        //{
-        //    db.Dispose();
-        //    base.Dispose(disposing);
-        //}
+            using (var db = new RepositorySession())
+            {
+                repository.Delete(nicelittleform);
+                db.Commit();
+            }
+
+            return RedirectToAction("Index");
+        }
     }
 }

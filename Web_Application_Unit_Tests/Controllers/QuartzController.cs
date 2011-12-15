@@ -24,6 +24,7 @@ namespace Web_Application_Unit_Tests.Controllers
             resultsRows = Builder<AwsEc2Status>.CreateListOfSize(totalRows).Build();
             repository = Substitute.For<IRepository<AwsEc2Status>>();
             repository.All().Returns(resultsRows.AsQueryable());
+            
 
             RepositorySession.DefaultContainerType = typeof(FakeObjectContext);
 
@@ -48,7 +49,7 @@ namespace Web_Application_Unit_Tests.Controllers
         {
             var result = controller.Index().Model;
             var list = (IEnumerable<AwsEc2Status>)result;
-            list.ToList().Count.ShouldBe(10);
+            list.ToList().Count.ShouldBe(totalRows);
         }
     }
 }
