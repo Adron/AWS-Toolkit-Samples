@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Data;
 using System.Linq;
 using System.Web.Mvc;
 using AWS_MVC_Web_Application.Data;
@@ -84,12 +83,10 @@ namespace AWS_MVC_Web_Application.Controllers
         [HttpPost, ActionName("Delete")]
         public ActionResult DeleteConfirmed(Guid id)
         {
-            var repoResult = repository.All();
-            var nicelittleform = repoResult.Single(n => n.Id == id);
-
             using (var db = new RepositorySession())
             {
-                repository.Delete(nicelittleform);
+                var niceLittleform = repository.All().Single(n => n.Id == id);
+                repository.Delete(niceLittleform);
                 db.Commit();
             }
 

@@ -24,21 +24,7 @@ namespace Web_Application_Unit_Tests.Controllers
         [TestFixtureSetUp]
         public void SetupController()
         {
-            addDeleteNewLittleForm = new NiceLittleForm()
-            {
-                Id = guid,
-                City = "Someplace",
-                Country = "USA",
-                Email = "blagh@gmail.com",
-                FavoriteDate = DateTime.Now.AddDays(-4),
-                FirstName = "John",
-                LastName = "Smith",
-                Stamp = DateTime.Now
-            };
-
-            
-            resultsRows = Builder<NiceLittleForm>.CreateListOfSize(totalRows - 1).Build();
-            resultsRows.Add(addDeleteNewLittleForm);
+            resultsRows = Builder<NiceLittleForm>.CreateListOfSize(totalRows).Build();
 
             repository = Substitute.For<IRepository<NiceLittleForm>>();
             repository.All().Returns(resultsRows.AsQueryable());
@@ -78,21 +64,34 @@ namespace Web_Application_Unit_Tests.Controllers
         [Test]
         public void should_add_the_NiceLittleForm_to_the_repository()
         {
+            var addDeleteNewLittleForm = new NiceLittleForm() {Id = guid};
+
             controller.Create(addDeleteNewLittleForm);
+           
             repository.Received().Add(addDeleteNewLittleForm);
         }
 
         [Test]
         public void should_show_NiceLittleForm_delete_confirmation_page()
         {
+            addDeleteNewLittleForm = new NiceLittleForm() { Id = guid };
+            resultsRows.Add(addDeleteNewLittleForm);
+
             controller.Delete(guid).ShouldNotBe(null);
+
+            resultsRows.Remove(addDeleteNewLittleForm);
         }
 
         [Test]
         public void should_remove_the_NiceLittleForm_with_the_repository()
         {
+            addDeleteNewLittleForm = new NiceLittleForm() { Id = guid };
+            resultsRows.Add(addDeleteNewLittleForm);
+
             controller.DeleteConfirmed(guid);
             repository.Received().Delete(addDeleteNewLittleForm);
+
+            resultsRows.Remove(addDeleteNewLittleForm);
         }
     }
 }
