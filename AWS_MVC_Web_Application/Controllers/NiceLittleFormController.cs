@@ -9,15 +9,18 @@ namespace AWS_MVC_Web_Application.Controllers
 {
     public class NiceLittleFormController : Controller
     {
-        private readonly IRepository<NiceLittleForm> repository;
+        private IRepository<NiceLittleForm> repository;
+        private IRepositorySession workingDatabaseSession;
 
         public NiceLittleFormController()
         {
-            repository = new NiceLittleFormRepository(new RepositorySession(new NotBigDataEntities()));
+            workingDatabaseSession = new RepositorySession(new NotBigDataEntities());
+            repository = new NiceLittleFormRepository(workingDatabaseSession);
         }
 
-        public NiceLittleFormController(IRepository<NiceLittleForm> repository)
+        public NiceLittleFormController(IRepository<NiceLittleForm> repository, IRepositorySession workingSession)
         {
+            workingDatabaseSession = workingSession;
             this.repository = repository;
         }
 
@@ -26,11 +29,10 @@ namespace AWS_MVC_Web_Application.Controllers
             return View(repository.All().ToList());
         }
 
-        //public ViewResult Details(Guid id)
-        //{
-        //    NiceLittleForm nicelittleform = db.NiceLittleForms.Single(n => n.Id == id);
-        //    return View(nicelittleform);
-        //}
+        public ViewResult Details(Guid id)
+        {
+            return View(repository.All().Single(n => n.Id == id));
+        }
 
         public ActionResult Create()
         {
@@ -40,15 +42,12 @@ namespace AWS_MVC_Web_Application.Controllers
         [HttpPost]
         public ActionResult Create(NiceLittleForm nicelittleform)
         {
-            using (var db = new RepositorySession())
+            if (ModelState.IsValid)
             {
-                if (ModelState.IsValid)
-                {
-                    nicelittleform.Id = Guid.NewGuid();
-                    nicelittleform.Stamp = DateTime.Now;
-                    repository.Add(nicelittleform);
-                    db.Commit();
-                }
+                nicelittleform.Id = Guid.NewGuid();
+                nicelittleform.Stamp = DateTime.Now;
+                repository.Add(nicelittleform);
+                workingDatabaseSession.Commit();
             }
 
             return View(nicelittleform);
@@ -76,8 +75,7 @@ namespace AWS_MVC_Web_Application.Controllers
 
         public ActionResult Delete(Guid id)
         {
-            var niceLittleForm = repository.All().Single(n => n.Id == id);
-            return View(niceLittleForm);
+            return View(repository.All().Single(n => n.Id == id));
         }
 
         [HttpPost, ActionName("Delete")]

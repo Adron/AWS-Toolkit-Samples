@@ -20,6 +20,7 @@ namespace Web_Application_Unit_Tests.Controllers
         IRepository<NiceLittleForm> repository;
         private NiceLittleForm addDeleteNewLittleForm;
         private Guid guid = Guid.NewGuid();
+        private IRepositorySession session;
 
         [TestFixtureSetUp]
         public void SetupController()
@@ -27,11 +28,12 @@ namespace Web_Application_Unit_Tests.Controllers
             resultsRows = Builder<NiceLittleForm>.CreateListOfSize(totalRows).Build();
 
             repository = Substitute.For<IRepository<NiceLittleForm>>();
+            session = Substitute.For<IRepositorySession>();
             repository.All().Returns(resultsRows.AsQueryable());
 
             RepositorySession.DefaultContainerType = typeof(FakeObjectContext);
 
-            controller = new NiceLittleFormController(repository);
+            controller = new NiceLittleFormController(repository, session);
         }
 
         [Test]
@@ -62,9 +64,9 @@ namespace Web_Application_Unit_Tests.Controllers
         }
 
         [Test]
-        public void should_add_the_NiceLittleForm_to_the_repository()
+        public void should_create_the_NiceLittleForm_to_the_repository()
         {
-            var addDeleteNewLittleForm = new NiceLittleForm() {Id = guid};
+            addDeleteNewLittleForm = new NiceLittleForm {Id = guid};
 
             controller.Create(addDeleteNewLittleForm);
            
@@ -90,6 +92,17 @@ namespace Web_Application_Unit_Tests.Controllers
 
             controller.DeleteConfirmed(guid);
             repository.Received().Delete(addDeleteNewLittleForm);
+
+            resultsRows.Remove(addDeleteNewLittleForm);
+        }
+
+        [Test]
+        public void should_show_NiceLittleForm_details()
+        {
+            addDeleteNewLittleForm = new NiceLittleForm() { Id = guid };
+            resultsRows.Add(addDeleteNewLittleForm);
+
+            controller.Details(guid).ShouldNotBe(null);
 
             resultsRows.Remove(addDeleteNewLittleForm);
         }
