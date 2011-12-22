@@ -31,6 +31,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AWSSDK, Version=1.3.19.0, Culture=neutral, PublicKeyToken=cd2d24cd2bace800, processorArchitecture=MSIL" />
     <Reference Include="FizzWare.NBuilder">
       <HintPath>..\packages\NBuilder.3.0.1.1\lib\FizzWare.NBuilder.dll</HintPath>
     </Reference>
@@ -60,7 +61,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controllers\FakeObjectContext.cs" />
+    <Compile Include="Controllers\AmazonWebServicesTests.cs" />
+    <Compile Include="Fakes\ObjectContextFake.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\NiceLittleFormController.cs" />
     <Compile Include="Controllers\QuartzController.cs" />
@@ -76,6 +78,10 @@
     <ProjectReference Include="..\AWS_MVC_Web_Application\AWS_MVC_Web_Application.csproj">
       <Project>{EB796AC6-18DD-49C2-BB07-E83B351DF5D5}</Project>
       <Name>AWS_MVC_Web_Application</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Noctilucent\Noctilucent.csproj">
+      <Project>{554D26C6-D68A-4708-928A-CCF81CF09447}</Project>
+      <Name>Noctilucent</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

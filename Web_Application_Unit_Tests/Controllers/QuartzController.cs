@@ -7,6 +7,7 @@ using FizzWare.NBuilder;
 using NSubstitute;
 using NUnit.Framework;
 using Shouldly;
+using Web_Application_Unit_Tests.Fakes;
 
 namespace Web_Application_Unit_Tests.Controllers
 {
@@ -26,7 +27,7 @@ namespace Web_Application_Unit_Tests.Controllers
             repository.All().Returns(resultsRows.AsQueryable());
             
 
-            RepositorySession.DefaultContainerType = typeof(FakeObjectContext);
+            RepositorySession.DefaultContainerType = typeof(ObjectContextFake);
 
             controller = new QuartzController(repository);
         }

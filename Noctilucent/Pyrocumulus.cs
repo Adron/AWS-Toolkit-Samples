@@ -1,24 +1,43 @@
-﻿namespace Noctilucent
+﻿using Amazon;
+using Amazon.EC2;
+using Amazon.S3;
+using Amazon.SimpleDB;
+
+namespace Noctilucent
 {
-    public class Pyrocumulus
+    public class Pyrocumulus : IPyrocumulus
     {
-        private readonly IAmazonEc2 _ec2;
-        private readonly IAmazonS3 _s3;
+        private AmazonEC2 ec2;
+        private AmazonS3 s3;
+        private AmazonSimpleDB simpleDb;
 
-        public Pyrocumulus(IAmazonEc2 ec2)
+        public Pyrocumulus()
         {
-            _ec2 = ec2;
+            ec2 = CreateAmazonEc2Client();
+            s3 = CreateAmazonS3Client();
+            simpleDb = CreateAmazonSimpleDBClient();
         }
 
-        public Pyrocumulus(IAmazonS3 s3)
+        public AmazonEC2 CreateAmazonEc2Client()
         {
-            _s3 = s3;
+            return AWSClientFactory.CreateAmazonEC2Client();
         }
 
-        public Pyrocumulus(IAmazonEc2 ec2, IAmazonS3 s3)
+        public AmazonS3 CreateAmazonS3Client()
         {
-            _ec2 = ec2;
-            _s3 = s3;
+            return AWSClientFactory.CreateAmazonS3Client();
         }
+
+        public AmazonSimpleDB CreateAmazonSimpleDBClient()
+        {
+            return AWSClientFactory.CreateAmazonSimpleDBClient();
+        }
+    }
+
+    public enum CloudFunctionality
+    {
+        Ec2,
+        S3,
+        SimpleDb
     }
 }
