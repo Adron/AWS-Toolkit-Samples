@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWS_MVC_Web_Application", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWS_Web_Project_Template", "AWS_Web_Project_Template\AWS_Web_Project_Template.csproj", "{9007B486-D112-4AEF-BAE5-AFBCC1AADA17}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Noctilucent", "Noctilucent\Noctilucent.csproj", "{554D26C6-D68A-4708-928A-CCF81CF09447}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -31,6 +33,10 @@ Global
 		{9007B486-D112-4AEF-BAE5-AFBCC1AADA17}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9007B486-D112-4AEF-BAE5-AFBCC1AADA17}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9007B486-D112-4AEF-BAE5-AFBCC1AADA17}.Release|Any CPU.Build.0 = Release|Any CPU
+		{554D26C6-D68A-4708-928A-CCF81CF09447}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{554D26C6-D68A-4708-928A-CCF81CF09447}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{554D26C6-D68A-4708-928A-CCF81CF09447}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{554D26C6-D68A-4708-928A-CCF81CF09447}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

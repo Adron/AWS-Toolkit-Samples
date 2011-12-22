@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Web;
 using System.Web.UI;
-using System.Web.UI.WebControls;
-
 using System.Text;
 using System.IO;
 
@@ -18,7 +14,7 @@ using Amazon.S3.Model;
 
 namespace AWS_Web_Project_Template
 {
-    public partial class _Default : System.Web.UI.Page
+    public partial class _Default : Page
     {
         protected AmazonEC2 ec2;
         protected AmazonS3 s3;
