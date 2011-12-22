@@ -68,6 +68,9 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abstractions\AmazonEC2.cs" />
+    <Compile Include="Abstractions\IAmazonEc2Wrapper.cs" />
+    <Compile Include="Abstractions\IAmazonS3Wrapper.cs" />
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
