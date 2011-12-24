@@ -1,4 +1,5 @@
-﻿using Amazon;
+﻿using System;
+using Amazon;
 using Amazon.EC2;
 using Amazon.S3;
 using Amazon.SimpleDB;
@@ -15,7 +16,25 @@ namespace Noctilucent
         {
             ec2 = CreateAmazonEc2Client();
             s3 = CreateAmazonS3Client();
-            simpleDb = CreateAmazonSimpleDBClient();
+            simpleDb = CreateAmazonSimpleDbClient();
+        }
+
+        public Pyrocumulus(CloudService service)
+        {
+            switch (service)
+            {
+                case CloudService.Ec2:
+                    ec2 = CreateAmazonEc2Client(); 
+                    break;
+                case CloudService.S3:
+                    s3 = CreateAmazonS3Client();
+                    break;
+                case CloudService.SimpleDb:
+                    simpleDb = CreateAmazonSimpleDbClient();
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException("service");
+            }
         }
 
         public AmazonEC2 CreateAmazonEc2Client()
@@ -28,13 +47,13 @@ namespace Noctilucent
             return AWSClientFactory.CreateAmazonS3Client();
         }
 
-        public AmazonSimpleDB CreateAmazonSimpleDBClient()
+        public AmazonSimpleDB CreateAmazonSimpleDbClient()
         {
             return AWSClientFactory.CreateAmazonSimpleDBClient();
         }
     }
 
-    public enum CloudFunctionality
+    public enum CloudService
     {
         Ec2,
         S3,
