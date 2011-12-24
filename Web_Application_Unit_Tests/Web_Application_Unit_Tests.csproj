@@ -65,13 +65,13 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\NiceLittleFormController.cs" />
     <Compile Include="Controllers\QuartzController.cs" />
+    <Compile Include="Fakes\FakeObjectContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Fakes\" />
     <Folder Include="Jobs\" />
   </ItemGroup>
   <ItemGroup>
