@@ -62,7 +62,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\AmazonWebServicesTests.cs" />
-    <Compile Include="Fakes\ObjectContextFake.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\NiceLittleFormController.cs" />
     <Compile Include="Controllers\QuartzController.cs" />
@@ -72,6 +71,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Fakes\" />
     <Folder Include="Jobs\" />
   </ItemGroup>
   <ItemGroup>

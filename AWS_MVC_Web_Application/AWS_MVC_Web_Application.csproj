@@ -123,18 +123,13 @@
     <Compile Include="Jobs\StatusTracker.cs" />
     <Compile Include="Jobs\WorkingFlowJob.cs" />
     <Compile Include="Jobs\SinglyScheduler.cs" />
-    <Compile Include="Models\AwsRegion.cs" />
-    <Compile Include="Models\Bucket.cs" />
-    <Compile Include="Models\Ec2Instance.cs" />
+    <Compile Include="Models\CloudyInformation.cs" />
     <Compile Include="Models\NotBigData.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>NotBigData.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\PilesOfDataEntities.cs" />
-    <Compile Include="Models\RandomAmazonInfo.cs" />
-    <Compile Include="Models\YourEc2Info.cs" />
-    <Compile Include="Models\YourS3Info.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -363,6 +358,7 @@
       <Name>Noctilucent</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
