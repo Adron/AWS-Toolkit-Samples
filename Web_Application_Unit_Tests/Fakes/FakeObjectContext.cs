@@ -1,12 +1,11 @@
 ﻿using System.Data.Objects;
-
 using AWS_MVC_Web_Application.Data;
 
-namespace Web_Application_Unit_Tests.Controllers
+namespace Web_Application_Unit_Tests.Fakes
 {
     public class FakeObjectContext : IObjectContext
     {
-        public void Dispose(){}
+        public void Dispose() { }
 
         public ObjectContextOptions ContextOptions
         {

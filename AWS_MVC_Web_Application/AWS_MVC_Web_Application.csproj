@@ -34,6 +34,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AWSSDK, Version=1.3.19.0, Culture=neutral, PublicKeyToken=cd2d24cd2bace800, processorArchitecture=MSIL" />
     <Reference Include="Common.Logging">
       <HintPath>..\packages\Common.Logging.1.2.0\lib\1.0\Common.Logging.dll</HintPath>
     </Reference>
@@ -104,6 +105,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\AmazonWebServicesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\NiceLittleFormController.cs" />
     <Compile Include="Controllers\QuartzController.cs" />
@@ -121,6 +123,7 @@
     <Compile Include="Jobs\StatusTracker.cs" />
     <Compile Include="Jobs\WorkingFlowJob.cs" />
     <Compile Include="Jobs\SinglyScheduler.cs" />
+    <Compile Include="Models\CloudyInformation.cs" />
     <Compile Include="Models\NotBigData.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -296,6 +299,7 @@
     <None Include="Scripts\DataTables-1.8.2\extras\Scroller\media\js\Scroller.min.js.gz" />
     <None Include="Scripts\DataTables-1.8.2\extras\TableTools\media\js\TableTools.min.js.gz" />
     <None Include="Scripts\DataTables-1.8.2\media\js\jquery.dataTables.min.js.gz" />
+    <Content Include="Views\AmazonWebServices\Index.cshtml" />
     <None Include="_bin_deployableAssemblies\amd64\Microsoft.VC90.CRT\README_ENU.txt" />
     <None Include="_bin_deployableAssemblies\amd64\Microsoft.VC90.CRT\msvcr90.dll" />
     <None Include="_bin_deployableAssemblies\amd64\Microsoft.VC90.CRT\Microsoft.VC90.CRT.manifest" />
@@ -347,6 +351,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Quartz\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Noctilucent\Noctilucent.csproj">
+      <Project>{554D26C6-D68A-4708-928A-CCF81CF09447}</Project>
+      <Name>Noctilucent</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

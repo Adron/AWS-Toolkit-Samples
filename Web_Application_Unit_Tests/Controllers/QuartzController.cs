@@ -7,6 +7,7 @@ using FizzWare.NBuilder;
 using NSubstitute;
 using NUnit.Framework;
 using Shouldly;
+using Web_Application_Unit_Tests.Fakes;
 
 namespace Web_Application_Unit_Tests.Controllers
 {
@@ -24,7 +25,7 @@ namespace Web_Application_Unit_Tests.Controllers
             resultsRows = Builder<AwsEc2Status>.CreateListOfSize(totalRows).Build();
             repository = Substitute.For<IRepository<AwsEc2Status>>();
             repository.All().Returns(resultsRows.AsQueryable());
-            
+
 
             RepositorySession.DefaultContainerType = typeof(FakeObjectContext);
 
