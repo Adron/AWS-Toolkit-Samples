@@ -24,7 +24,7 @@ namespace Noctilucent
             switch (service)
             {
                 case CloudService.Ec2:
-                    ec2 = CreateAmazonEc2Client(); 
+                    ec2 = CreateAmazonEc2Client();
                     break;
                 case CloudService.S3:
                     s3 = CreateAmazonS3Client();

@@ -1,4 +1,4 @@
-﻿using AWS_MVC_Web_Application.Controllers;
+﻿﻿using AWS_MVC_Web_Application.Controllers;
 using Amazon.EC2;
 using NSubstitute;
 using NUnit.Framework;
@@ -8,7 +8,7 @@ using Shouldly;
 namespace Web_Application_Unit_Tests.Controllers
 {
     [TestFixture]
-   public class when_amazon_web_services_controller_actions_are_executed
+    public class when_amazon_web_services_controller_actions_are_executed
     {
         private AmazonWebServicesController controller;
 
@@ -18,7 +18,7 @@ namespace Web_Application_Unit_Tests.Controllers
             var pyrocumulus = Substitute.For<IPyrocumulus>();
 
             var ec2Fake = Substitute.For<AmazonEC2>();
-           
+
             pyrocumulus.CreateAmazonEc2Client().Returns(ec2Fake);
 
             controller = new AmazonWebServicesController(pyrocumulus);
