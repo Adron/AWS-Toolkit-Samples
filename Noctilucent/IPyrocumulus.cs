@@ -8,6 +8,6 @@ namespace Noctilucent
     {
         AmazonEC2 CreateAmazonEc2Client();
         AmazonS3 CreateAmazonS3Client();
-        AmazonSimpleDB CreateAmazonSimpleDBClient();
+        AmazonSimpleDB CreateAmazonSimpleDbClient();
     }
 }

@@ -25,9 +25,9 @@ namespace Web_Application_Unit_Tests.Controllers
             resultsRows = Builder<AwsEc2Status>.CreateListOfSize(totalRows).Build();
             repository = Substitute.For<IRepository<AwsEc2Status>>();
             repository.All().Returns(resultsRows.AsQueryable());
-            
 
-            RepositorySession.DefaultContainerType = typeof(ObjectContextFake);
+
+            RepositorySession.DefaultContainerType = typeof(FakeObjectContext);
 
             controller = new QuartzController(repository);
         }

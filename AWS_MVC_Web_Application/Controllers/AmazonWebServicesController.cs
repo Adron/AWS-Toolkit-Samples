@@ -1,5 +1,5 @@
 ﻿using System.Web.Mvc;
-using Amazon;
+using AWS_MVC_Web_Application.Models;
 using Noctilucent;
 
 namespace AWS_MVC_Web_Application.Controllers
@@ -21,6 +21,18 @@ namespace AWS_MVC_Web_Application.Controllers
         public ActionResult Index()
         {
             return View();
+        }
+
+        public JsonResult Regions()
+        {
+            var information = new CloudyInformation();
+            return Json(information);
+        }
+
+        public JsonResult Instances(string region)
+        {
+            var information = new CloudyInformation();
+            return Json(information);
         }
     }
 }

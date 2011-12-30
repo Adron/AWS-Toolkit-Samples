@@ -1,4 +1,4 @@
-﻿using AWS_MVC_Web_Application.Controllers;
+﻿﻿using AWS_MVC_Web_Application.Controllers;
 using Amazon.EC2;
 using NSubstitute;
 using NUnit.Framework;
@@ -8,36 +8,39 @@ using Shouldly;
 namespace Web_Application_Unit_Tests.Controllers
 {
     [TestFixture]
-    public class AmazonWebServicesTests
+    public class when_amazon_web_services_controller_actions_are_executed
     {
-        AmazonWebServicesController controller;
+        private AmazonWebServicesController controller;
 
         [TestFixtureSetUp]
-        public void SetupController()
+        public void when_utilizing_cloudy_services()
         {
             var pyrocumulus = Substitute.For<IPyrocumulus>();
 
-            IAmazonEC2 amazonEc2 = new AmazonEC2Client();
+            var ec2Fake = Substitute.For<AmazonEC2>();
 
-            pyrocumulus.CreateAmazonEc2Client().Returns(amazonEc2);
+            pyrocumulus.CreateAmazonEc2Client().Returns(ec2Fake);
 
-            controller = new AmazonWebServicesController();
+            controller = new AmazonWebServicesController(pyrocumulus);
         }
 
         [Test]
-        public void should_return_index_view()
+        public void should_have_the_cloudy_bits()
         {
             controller.Index().ShouldNotBe(null);
         }
 
         [Test]
-        public void should_return_index_with_appropriate_amazon_web_services()
+        public void should_have_ec2_information_regions_zones_data()
         {
-
+            controller.Regions().ShouldNotBe(null);
         }
-    }
 
-    public interface IAmazonEC2 : AmazonEC2
-    {
+        [Test]
+        public void should_have_ec2_information_instance_name_data()
+        {
+            const string region = "SomewhereRegion";
+            controller.Instances(region).ShouldNotBe(null);
+        }
     }
 }

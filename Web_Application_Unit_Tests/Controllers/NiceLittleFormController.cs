@@ -30,7 +30,7 @@ namespace Web_Application_Unit_Tests.Controllers
             repository = Substitute.For<IRepository<NiceLittleForm>>();
             repository.All().Returns(resultsRows.AsQueryable());
 
-            RepositorySession.DefaultContainerType = typeof(ObjectContextFake);
+            RepositorySession.DefaultContainerType = typeof(FakeObjectContext);
 
             controller = new NiceLittleFormController(repository);
         }
@@ -65,10 +65,10 @@ namespace Web_Application_Unit_Tests.Controllers
         [Test]
         public void should_add_the_NiceLittleForm_to_the_repository()
         {
-            var addDeleteNewLittleForm = new NiceLittleForm() {Id = guid};
+            var addDeleteNewLittleForm = new NiceLittleForm() { Id = guid };
 
             controller.Create(addDeleteNewLittleForm);
-           
+
             repository.Received().Add(addDeleteNewLittleForm);
         }
 
