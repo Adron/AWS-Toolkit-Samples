@@ -15,7 +15,7 @@ For testing the following libraries have been used, all retrieved utilizing NuGe
 Solution Folder Structure Break Down
 ------------------------------------
 
-This list does not include a description for every file and folder, but instead just for specific key files and folders.
+This list does not include a description for every file and folder, but instead just for specific key files and folders. This initial description is for the solution and projects located in the "AWS Toolkit Completed Example" Folder.
 
 * Solution Items
   * .gitignore - the file has all the files and folders to ignore for git.
