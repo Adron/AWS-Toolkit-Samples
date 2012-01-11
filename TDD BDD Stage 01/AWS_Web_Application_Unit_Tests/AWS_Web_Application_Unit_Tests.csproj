@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{0F618343-C97D-4F0B-9719-6A341C6B8445}</ProjectGuid>
+    <ProjectGuid>{B6F99339-3E19-4649-998F-446040B53769}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>AWS_Web_Application_Unit_Tests</RootNamespace>
