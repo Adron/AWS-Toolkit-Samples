@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWS_Web_Application_Unit_Tests", "AWS_Web_Application_Unit_Tests\AWS_Web_Application_Unit_Tests.csproj", "{B6F99339-3E19-4649-998F-446040B53769}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWS_MVC_Web_Application", "AWS_MVC_Web_Application\AWS_MVC_Web_Application.csproj", "{99982770-6524-4760-934A-ADBC4E8C6F63}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,6 +15,10 @@ Global
 		{B6F99339-3E19-4649-998F-446040B53769}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B6F99339-3E19-4649-998F-446040B53769}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B6F99339-3E19-4649-998F-446040B53769}.Release|Any CPU.Build.0 = Release|Any CPU
+		{99982770-6524-4760-934A-ADBC4E8C6F63}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{99982770-6524-4760-934A-ADBC4E8C6F63}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{99982770-6524-4760-934A-ADBC4E8C6F63}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{99982770-6524-4760-934A-ADBC4E8C6F63}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
