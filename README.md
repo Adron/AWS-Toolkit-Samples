@@ -1,3 +1,5 @@
+[![endorse](http://api.coderwall.com/adron/endorsecount.png)](http://coderwall.com/adron)
+
 AWS SDK + VS Toolkit Demo w/ TDD/BDD Pairing
 ============================================
 
