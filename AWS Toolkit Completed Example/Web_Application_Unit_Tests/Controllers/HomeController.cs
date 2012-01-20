@@ -21,16 +21,6 @@ namespace Web_Application_Unit_Tests.Controllers
             controller.Index().ShouldNotBe(null);
         }
 
-        [Test]
-        public void should_return_contact_view()
-        {
-            controller.Index().ShouldNotBe(null);
-        }
-
-        [Test]
-        public void should_return_links_view()
-        {
-            controller.Index().ShouldNotBe(null);
-        }
+      
     }
 }
